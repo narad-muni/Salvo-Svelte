@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceRoot}/backend/target/debug/backend",
+            "args": [],
+            "cwd": "${workspaceRoot}/backend",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Frontend",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run","dev"],
+            "cwd": "${workspaceRoot}/frontend"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Fullstack Debug",
+            "configurations": ["Backend", "Frontend"]
+        }
+    ]
+}
