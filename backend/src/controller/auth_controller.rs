@@ -1,6 +1,6 @@
 use salvo::prelude::*;
 use salvo::session::{Session, SessionDepotExt};
-use super::super::singleton;
+use super::super::globals;
 
 #[endpoint]
 pub fn login(depot: &mut Depot) -> String {
@@ -19,11 +19,11 @@ pub fn login(depot: &mut Depot) -> String {
 
 #[endpoint]
 pub async fn status(depot: &mut Depot) -> String {
-    let session = singleton::memory_session::MEMORY_SESSION.as_ref();
+    let session = globals::memory_session::MEMORY_SESSION.as_ref();
     let session = session.write().await;
 
     println!("{:?} {:?}",session.get(""), session.keys());
-    println!("{:?}", singleton::memory_session::USER_MAP.as_ref());
+    println!("{:?}", globals::memory_session::USER_MAP.as_ref());
     
     if let Some(session) = depot.session_mut() {
         session.get::<String>("username").unwrap_or("Logged Out".to_owned())

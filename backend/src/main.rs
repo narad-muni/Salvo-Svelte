@@ -1,7 +1,7 @@
 mod routes;
 mod controller;
 mod middleware;
-mod singleton;
+mod globals;
 
 use dotenv::dotenv;
 use salvo::prelude::*;

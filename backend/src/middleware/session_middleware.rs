@@ -1,5 +1,5 @@
 use super::super::middleware::MemoryStore;
-use super::super::singleton::MEMORY_SESSION;
+use super::super::globals::MEMORY_SESSION;
 
 use salvo::session::SessionHandler;
 
