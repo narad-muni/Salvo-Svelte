@@ -1,6 +1,4 @@
 use salvo::prelude::*;
 
 #[endpoint]
-pub fn list() {
-
-}
+pub fn list() {}

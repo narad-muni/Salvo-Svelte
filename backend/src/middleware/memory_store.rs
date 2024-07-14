@@ -1,6 +1,6 @@
 use crate::{async_trait, SessionStore};
-use async_session::{Result, Session};
 use async_lock::RwLock;
+use async_session::{Result, Session};
 use std::{collections::HashMap, sync::Arc};
 
 /// # in-memory session store
@@ -38,7 +38,6 @@ impl SessionStore for MemoryStore {
     }
 
     async fn destroy_session(&self, session: Session) -> Result {
-
         self.inner.write().await.remove(session.id());
         Ok(())
     }

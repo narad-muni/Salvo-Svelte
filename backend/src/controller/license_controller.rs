@@ -6,6 +6,4 @@ pub fn status() -> &'static str {
 }
 
 #[endpoint]
-pub fn upload() {
-
-}
+pub fn upload() {}

@@ -1,5 +1,5 @@
-use super::super::controller::license_controller;
 use super::super::controller::auth_controller;
+use super::super::controller::license_controller;
 
 use salvo::prelude::*;
 
